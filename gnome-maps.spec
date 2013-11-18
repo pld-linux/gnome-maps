@@ -1,11 +1,11 @@
 Summary:	Map application for GNOME
 Name:		gnome-maps
-Version:	3.10.0
+Version:	3.10.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	55e85b056eb6948af99702b2163b87b5
+# Source0-md5:	3845857151bbee5c828d4a40e61d6d9c
 URL:		http://wiki.gnome.org/Maps
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.10
