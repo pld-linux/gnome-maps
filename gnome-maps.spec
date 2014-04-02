@@ -1,16 +1,17 @@
 Summary:	Map application for GNOME
 Name:		gnome-maps
-Version:	3.10.2
-Release:	2
+Version:	3.12.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	3845857151bbee5c828d4a40e61d6d9c
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.12/%{name}-%{version}.tar.xz
+# Source0-md5:	f8616a6432faf620a6fb8fb009169434
 URL:		http://wiki.gnome.org/Maps
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.10
-BuildRequires:	gjs-devel
-BuildRequires:	glib2-devel
+BuildRequires:	gjs-devel >= 1.40.0
+BuildRequires:	glib2-devel >= 1:2.40.0
+BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
@@ -22,8 +23,8 @@ Requires:	clutter
 Requires:	clutter-gtk
 Requires:	cogl
 Requires:	geocode-glib
-Requires:	gjs
-Requires:	glib2
+Requires:	gjs >= 1.40.0
+Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3
 Requires:	hicolor-icon-theme
 Requires:	libchamplain
