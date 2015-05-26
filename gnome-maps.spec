@@ -1,19 +1,25 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.14.2
+Version:	3.16.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.14/%{name}-%{version}.tar.xz
-# Source0-md5:	237df59006998899dbaae47d4c2ee73d
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	b3566568f50af25dce8b49581470a757
+Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.10
+BuildRequires:	folks-devel >= 0.10.0
+BuildRequires:	geoclue2-devel >= 0.12.99
+BuildRequires:	geocode-glib-devel >= 3.15.2
 BuildRequires:	gjs-devel >= 1.40.0
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	intltool >= 0.40.0
+BuildRequires:	libchamplain-devel >= 0.12.9
+BuildRequires:	libgee-devel >= 0.16.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	tar >= 1:1.22
@@ -23,12 +29,14 @@ Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	clutter
 Requires:	clutter-gtk
 Requires:	cogl
-Requires:	geocode-glib
+Requires:	folks >= 0.10.0
+Requires:	geocode-glib >= 3.15.2
 Requires:	gjs >= 1.40.0
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3
 Requires:	hicolor-icon-theme
-Requires:	libchamplain
+Requires:	libchamplain >= 0.12.9
+Requires:	libgee >= 0.16.0
 Requires:	libsoup
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,6 +49,7 @@ map.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__intltoolize}
@@ -49,7 +58,8 @@ map.
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-silent-rules
+	--disable-silent-rules \
+	--disable-static
 %{__make}
 
 %install
@@ -58,18 +68,18 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-maps/*.la
+
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 %glib_compile_schemas
 
 %postun
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 %glib_compile_schemas
 
@@ -77,11 +87,18 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_bindir}/gnome-maps
+%dir %{_libdir}/gnome-maps
+%attr(755,root,root) %{_libdir}/gnome-maps/libgnome-maps.so*
+%dir %{_libdir}/gnome-maps/girepository-1.0
+%{_libdir}/gnome-maps/girepository-1.0/GnomeMaps-1.0.typelib
 %{_datadir}/appdata/org.gnome.Maps.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Maps.service
-%{_datadir}/glib-2.0/schemas/org.gnome.maps.gschema.xml
-%{_datadir}/gnome-maps
+%{_datadir}/gir-1.0/GnomeMaps-1.0.gir
+%{_datadir}/glib-2.0/schemas/org.gnome.Maps.gschema.xml
+%dir %{_datadir}/gnome-maps
+%attr(755,root,root) %{_datadir}/gnome-maps/org.gnome.Maps
+%{_datadir}/gnome-maps/org.gnome.Maps.*.gresource
+%{_datadir}/gnome-maps/icons
 %{_desktopdir}/org.gnome.Maps.desktop
-%{_iconsdir}/HighContrast/*/*/gnome-maps.png
-%{_iconsdir}/hicolor/*/*/gnome-maps.png
-
+%{_iconsdir}/hicolor/*x*/apps/gnome-maps.png
+%{_iconsdir}/hicolor/symbolic/apps/gnome-maps-symbolic.svg

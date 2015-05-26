@@ -1,0 +1,11 @@
+--- gnome-maps-3.16.2/lib/Makefile.am.orig	2015-05-12 20:18:28.000000000 +0200
++++ gnome-maps-3.16.2/lib/Makefile.am	2015-05-26 16:12:53.343844267 +0200
+@@ -39,7 +39,7 @@
+ 	Champlain-0.12
+ GnomeMaps_1_0_gir_PACKAGES = gobject-2.0 geocode-glib-1.0
+ GnomeMaps_1_0_gir_FILES = $(libgnome_maps_la_SOURCES)
+-GnomeMaps_1_0_gir_CFLAGS = $(MAPS_CFLAGS) -I$(top_srcdir) -I$(top_builddir) -I$(srcdir)
++GnomeMaps_1_0_gir_CFLAGS = $(GNOME_MAPS_LIB_CFLAGS) -I$(top_srcdir) -I$(top_builddir) -I$(srcdir)
+ GnomeMaps_1_0_gir_LIBS = libgnome-maps.la
+ GnomeMaps_1_0_gir_EXPORT_PACKAGES = gnome-maps-1.0
+ GnomeMaps_1_0_gir_SCANNERFLAGS =					\
