@@ -1,22 +1,23 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.16.2
+Version:	3.18.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	b3566568f50af25dce8b49581470a757
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	f6d5a990104f9239017d3c481a5f8762
 Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
 BuildRequires:	geocode-glib-devel >= 3.15.2
-BuildRequires:	gjs-devel >= 1.40.0
+BuildRequires:	gjs-devel >= 1.43.3
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
+BuildRequires:	gtk+3-devel >= 3.16.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libchamplain-devel >= 0.12.9
 BuildRequires:	libgee-devel >= 0.16.0
@@ -31,9 +32,9 @@ Requires:	clutter-gtk
 Requires:	cogl
 Requires:	folks >= 0.10.0
 Requires:	geocode-glib >= 3.15.2
-Requires:	gjs >= 1.40.0
+Requires:	gjs >= 1.43.3
 Requires:	glib2 >= 1:2.40.0
-Requires:	gtk+3
+Requires:	gtk+3 >= 3.16.0
 Requires:	hicolor-icon-theme
 Requires:	libchamplain >= 0.12.9
 Requires:	libgee >= 0.16.0
