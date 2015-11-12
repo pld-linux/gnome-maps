@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.18.1
+Version:	3.18.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	f6d5a990104f9239017d3c481a5f8762
+# Source0-md5:	0f8ea0708efc91d2b9b8373ac1d6f2d6
 Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	autoconf >= 2.50
