@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.18.2
+Version:	3.20.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	0f8ea0708efc91d2b9b8373ac1d6f2d6
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.20/%{name}-%{version}.tar.xz
+# Source0-md5:	ebb89c4503280598fda51a26f7d68ab1
 Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	autoconf >= 2.50
@@ -22,7 +22,9 @@ BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libchamplain-devel >= 0.12.9
 BuildRequires:	libgee-devel >= 0.16.0
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig >= 1:0.22
+BuildRequires:	rest-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
@@ -101,5 +103,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-maps/org.gnome.Maps.*.gresource
 %{_datadir}/gnome-maps/icons
 %{_desktopdir}/org.gnome.Maps.desktop
-%{_iconsdir}/hicolor/*x*/apps/gnome-maps.png
-%{_iconsdir}/hicolor/symbolic/apps/gnome-maps-symbolic.svg
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.Maps.png
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
