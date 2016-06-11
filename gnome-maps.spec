@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.20.0
+Version:	3.20.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	ebb89c4503280598fda51a26f7d68ab1
+# Source0-md5:	b5857ffedf11fb1272d394e3fcf1a5a2
 Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	autoconf >= 2.50
@@ -14,31 +14,31 @@ BuildRequires:	automake >= 1:1.10
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
 BuildRequires:	geocode-glib-devel >= 3.15.2
-BuildRequires:	gjs-devel >= 1.43.3
+BuildRequires:	gjs-devel >= 1.44.0
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	gtk+3-devel >= 3.16.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libchamplain-devel >= 0.12.9
+BuildRequires:	libchamplain-devel >= 0.12.13
 BuildRequires:	libgee-devel >= 0.16.0
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel
+BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rest-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	glib2 >= 1:2.40.0
 Requires:	clutter
 Requires:	clutter-gtk
 Requires:	cogl
 Requires:	folks >= 0.10.0
 Requires:	geocode-glib >= 3.15.2
-Requires:	gjs >= 1.43.3
+Requires:	gjs >= 1.44.0
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3 >= 3.16.0
 Requires:	hicolor-icon-theme
-Requires:	libchamplain >= 0.12.9
+Requires:	libchamplain >= 0.12.13
 Requires:	libgee >= 0.16.0
 Requires:	libsoup
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
