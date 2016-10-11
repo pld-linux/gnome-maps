@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.20.1
+Version:	3.22.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	b5857ffedf11fb1272d394e3fcf1a5a2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	479e53d2079369133becde9431d989a0
 Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	autoconf >= 2.50
@@ -19,7 +19,7 @@ BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	gtk+3-devel >= 3.16.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libchamplain-devel >= 0.12.13
+BuildRequires:	libchamplain-devel >= 0.12.14
 BuildRequires:	libgee-devel >= 0.16.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0
@@ -38,7 +38,7 @@ Requires:	gjs >= 1.44.0
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3 >= 3.16.0
 Requires:	hicolor-icon-theme
-Requires:	libchamplain >= 0.12.13
+Requires:	libchamplain >= 0.12.14
 Requires:	libgee >= 0.16.0
 Requires:	libsoup
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -102,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/gnome-maps/org.gnome.Maps
 %{_datadir}/gnome-maps/org.gnome.Maps.*.gresource
 %{_datadir}/gnome-maps/icons
+%{_datadir}/gnome-maps/maps-service.json
 %{_desktopdir}/org.gnome.Maps.desktop
 %{_iconsdir}/hicolor/*x*/apps/org.gnome.Maps.png
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
