@@ -24,7 +24,7 @@ BuildRequires:	libgee-devel >= 0.16.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig >= 1:0.22
-BuildRequires:	rest-devel
+BuildRequires:	rest-devel >= 0.7
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
