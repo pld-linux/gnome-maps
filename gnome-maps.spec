@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.22.2
+Version:	3.24.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	7a1e0f10b00019024893368e3e80401f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.24/%{name}-%{version}.tar.xz
+# Source0-md5:	caf0f76336383e3e97df676c12a05e2f
 Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	autoconf >= 2.50
@@ -17,7 +17,7 @@ BuildRequires:	geocode-glib-devel >= 3.15.2
 BuildRequires:	gjs-devel >= 1.44.0
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
-BuildRequires:	gtk+3-devel >= 3.16.0
+BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libchamplain-devel >= 0.12.14
 BuildRequires:	libgee-devel >= 0.16.0
@@ -36,7 +36,7 @@ Requires:	folks >= 0.10.0
 Requires:	geocode-glib >= 3.15.2
 Requires:	gjs >= 1.44.0
 Requires:	glib2 >= 1:2.40.0
-Requires:	gtk+3 >= 3.16.0
+Requires:	gtk+3 >= 3.22.0
 Requires:	hicolor-icon-theme
 Requires:	libchamplain >= 0.12.14
 Requires:	libgee >= 0.16.0
