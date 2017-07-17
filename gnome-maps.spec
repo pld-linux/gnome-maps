@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.24.1
+Version:	3.24.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	0e493accebef4aff053bc2b4781fd2dc
+# Source0-md5:	0e051a4c8db9629ff72acd7d0b0ad003
 Patch0:		%{name}-build.patch
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	autoconf >= 2.50
@@ -24,7 +24,7 @@ BuildRequires:	libgee-devel >= 0.16.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig >= 1:0.22
-BuildRequires:	rest-devel >= 0.7
+BuildRequires:	rest-devel >= 0.7.90
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
@@ -41,6 +41,7 @@ Requires:	hicolor-icon-theme
 Requires:	libchamplain >= 0.12.14
 Requires:	libgee >= 0.16.0
 Requires:	libsoup
+Requires:	rest >= 0.7.90
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
