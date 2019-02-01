@@ -1,16 +1,13 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.24.3
+Version:	3.30.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	0e051a4c8db9629ff72acd7d0b0ad003
-Patch0:		%{name}-build.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.30/%{name}-%{version}.tar.xz
+# Source0-md5:	8d1691382f31cfa7c9526f2689d1a9fe
 URL:		https://wiki.gnome.org/Apps/Maps
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake >= 1:1.10
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
 BuildRequires:	geocode-glib-devel >= 3.15.2
@@ -23,8 +20,11 @@ BuildRequires:	libchamplain-devel >= 0.12.14
 BuildRequires:	libgee-devel >= 0.16.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0
+BuildRequires:	meson
+BuildRequires:	ninja
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rest-devel >= 0.7.90
+BuildRequires:	rpmbuild(macros) >= 1.727
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
@@ -53,26 +53,15 @@ map.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__intltoolize}
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules \
-	--disable-static
-%{__make}
+%meson build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-maps/*.la
+%ninja_install -C build
 
 %find_lang %{name}
 
@@ -95,11 +84,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnome-maps/libgnome-maps.so*
 %dir %{_libdir}/gnome-maps/girepository-1.0
 %{_libdir}/gnome-maps/girepository-1.0/GnomeMaps-1.0.typelib
-%{_datadir}/appdata/org.gnome.Maps.appdata.xml
+%{_datadir}/metainfo/org.gnome.Maps.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Maps.service
-%{_datadir}/gir-1.0/GnomeMaps-1.0.gir
-%{_datadir}/glib-2.0/schemas/org.gnome.Maps.gschema.xml
 %dir %{_datadir}/gnome-maps
+%dir %{_datadir}/gnome-maps/gir-1.0
+%{_datadir}/gnome-maps/gir-1.0/GnomeMaps-1.0.gir
+%{_datadir}/glib-2.0/schemas/org.gnome.Maps.gschema.xml
 %attr(755,root,root) %{_datadir}/gnome-maps/org.gnome.Maps
 %{_datadir}/gnome-maps/org.gnome.Maps.*.gresource
 %{_datadir}/gnome-maps/icons
