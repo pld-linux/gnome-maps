@@ -1,46 +1,50 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.30.3
-Release:	2
+Version:	3.34.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.30/%{name}-%{version}.tar.xz
-# Source0-md5:	8d1691382f31cfa7c9526f2689d1a9fe
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	dc6cdfbb6fa7a8bfea266f058ab11df0
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
 BuildRequires:	geocode-glib-devel >= 3.15.2
-BuildRequires:	gjs-devel >= 1.44.0
-BuildRequires:	glib2-devel >= 1:2.40.0
+BuildRequires:	gettext-tools
+BuildRequires:	gjs-devel >= 1.50.0
+BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	gtk+3-devel >= 3.22.0
-BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libchamplain-devel >= 0.12.14
 BuildRequires:	libgee-devel >= 0.16.0
-BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson
-BuildRequires:	ninja
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rest-devel >= 0.7.90
-BuildRequires:	rpmbuild(macros) >= 1.727
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.40.0
-Requires:	clutter
-Requires:	clutter-gtk
-Requires:	cogl
+Requires(post,postun):	glib2 >= 1:2.44.0
+# see src/main.js for GI dependencies
+Requires:	cairo >= 1.0
+Requires:	clutter >= 1.0
+Requires:	clutter-gtk >= 1.0
+Requires:	cogl >= 1.0
 Requires:	folks >= 0.10.0
+Requires:	geoclue2 >= 0.12.99
 Requires:	geocode-glib >= 3.15.2
-Requires:	gjs >= 1.44.0
-Requires:	glib2 >= 1:2.40.0
+Requires:	gfbgraph >= 0.2
+Requires:	gjs >= 1.50.0
+Requires:	glib2 >= 1:2.44.0
+Requires:	gnome-online-accounts >= 1.0
 Requires:	gtk+3 >= 3.22.0
 Requires:	hicolor-icon-theme
 Requires:	libchamplain >= 0.12.14
 Requires:	libgee >= 0.16.0
-Requires:	libsoup
+Requires:	libsoup >= 2.4
 Requires:	rest >= 0.7.90
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -56,6 +60,7 @@ map.
 
 %build
 %meson build
+
 %ninja_build -C build
 
 %install
@@ -84,16 +89,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnome-maps/libgnome-maps.so*
 %dir %{_libdir}/gnome-maps/girepository-1.0
 %{_libdir}/gnome-maps/girepository-1.0/GnomeMaps-1.0.typelib
-%{_datadir}/metainfo/org.gnome.Maps.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Maps.service
+%{_datadir}/glib-2.0/schemas/org.gnome.Maps.gschema.xml
 %dir %{_datadir}/gnome-maps
 %dir %{_datadir}/gnome-maps/gir-1.0
 %{_datadir}/gnome-maps/gir-1.0/GnomeMaps-1.0.gir
-%{_datadir}/glib-2.0/schemas/org.gnome.Maps.gschema.xml
 %attr(755,root,root) %{_datadir}/gnome-maps/org.gnome.Maps
 %{_datadir}/gnome-maps/org.gnome.Maps.*.gresource
 %{_datadir}/gnome-maps/icons
 %{_datadir}/gnome-maps/maps-service.json
+%{_datadir}/metainfo/org.gnome.Maps.appdata.xml
 %{_desktopdir}/org.gnome.Maps.desktop
-%{_iconsdir}/hicolor/*x*/apps/org.gnome.Maps.png
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Maps.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
