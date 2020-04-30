@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	3.34.3
+Version:	3.36.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	51b549242e30886865004093f9081652
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-maps/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	92171fe9ab0e2cd798818a2f5bd90369
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
@@ -101,4 +101,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.gnome.Maps.appdata.xml
 %{_desktopdir}/org.gnome.Maps.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Maps.svg
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Maps.Devel.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
