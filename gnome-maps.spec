@@ -34,6 +34,7 @@ Requires:	clutter >= 1.0
 Requires:	clutter-gtk >= 1.0
 Requires:	cogl >= 1.0
 Requires:	folks >= 0.10.0
+Requires:	gdk-pixbuf2 >= 2.0
 Requires:	geoclue2 >= 0.12.99
 Requires:	geocode-glib >= 3.15.2
 Requires:	gfbgraph >= 0.2
