@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	41.4
+Version:	42.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-maps/41/%{name}-%{version}.tar.xz
-# Source0-md5:	57a29ff555db6c9fc4e3ac68c697a3c8
+Source0:	https://download.gnome.org/sources/gnome-maps/42/%{name}-%{version}.tar.xz
+# Source0-md5:	c6086321733bb85f7d37c6239dd1ed9e
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
@@ -18,7 +18,7 @@ BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	libchamplain-devel >= 0.12.14
 BuildRequires:	libgee-devel >= 0.16.0
-BuildRequires:	libhandy1-devel >= 0.84.0
+BuildRequires:	libhandy1-devel >= 1.5.0
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson
 BuildRequires:	ninja >= 1.5
@@ -46,7 +46,7 @@ Requires:	gtk+3 >= 3.22.0
 Requires:	hicolor-icon-theme
 Requires:	libchamplain >= 0.12.14
 Requires:	libgee >= 0.16.0
-Requires:	libhandy1 >= 0.84.0
+Requires:	libhandy1 >= 1.5.0
 Requires:	libsoup >= 2.4
 Requires:	rest >= 0.7.90
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -104,5 +104,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.gnome.Maps.appdata.xml
 %{_desktopdir}/org.gnome.Maps.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Maps.svg
-%{_iconsdir}/hicolor/scalable/apps/org.gnome.Maps.Devel.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
