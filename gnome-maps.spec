@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	42.0
+Version:	42.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-maps/42/%{name}-%{version}.tar.xz
-# Source0-md5:	c6086321733bb85f7d37c6239dd1ed9e
+# Source0-md5:	76270662fcff139a2577da8a57df7399
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
@@ -18,6 +18,8 @@ BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	libchamplain-devel >= 0.12.14
 BuildRequires:	libgee-devel >= 0.16.0
+# only soup2 based is supported
+BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libhandy1-devel >= 1.5.0
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson
@@ -46,6 +48,7 @@ Requires:	gtk+3 >= 3.22.0
 Requires:	hicolor-icon-theme
 Requires:	libchamplain >= 0.12.14
 Requires:	libgee >= 0.16.0
+Requires:	libgweather4 >= 4.0
 Requires:	libhandy1 >= 1.5.0
 Requires:	libsoup >= 2.4
 Requires:	rest >= 0.7.90
