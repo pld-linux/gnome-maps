@@ -1,12 +1,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	42.2
+Version:	42.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-maps/42/%{name}-%{version}.tar.xz
-# Source0-md5:	f80350c2f71f2febf3dd5c85746b2b7e
+# Source0-md5:	f7842a970a6d64dec0cc68a9da77ba5c
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	folks-devel >= 0.10.0
 BuildRequires:	geoclue2-devel >= 0.12.99
