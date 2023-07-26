@@ -2,15 +2,15 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	43.5
+Version:	44.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-maps/43/%{name}-%{version}.tar.xz
-# Source0-md5:	24712bf35183dfebe6a0e7af176be155
+Source0:	https://download.gnome.org/sources/gnome-maps/44/%{name}-%{version}.tar.xz
+# Source0-md5:	e08e44c46458b07eb7985176af162228
 URL:		https://wiki.gnome.org/Apps/Maps
 BuildRequires:	geoclue2-devel >= 0.12.99
-BuildRequires:	geocode-glib-devel >= 3.15.2
+BuildRequires:	geocode-glib2-devel >= 3.26
 BuildRequires:	gettext-tools
 BuildRequires:	gjs-devel >= 1.69.2
 BuildRequires:	glib2-devel >= 1:2.66.0
@@ -19,6 +19,7 @@ BuildRequires:	gtk4-devel >= 4
 BuildRequires:	libadwaita-devel >= 1
 # soup3 based
 BuildRequires:	libgweather4-devel >= 4.0
+# soup3 based
 BuildRequires:	libshumate-devel >= 1.0
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson >= 0.61.0
@@ -34,7 +35,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	cairo >= 1.0
 Requires:	gdk-pixbuf2 >= 2.0
 Requires:	geoclue2 >= 0.12.99
-Requires:	geocode-glib >= 3.15.2
+Requires:	geocode-glib2 >= 3.26
 Requires:	gjs >= 1.69.2
 Requires:	glib2 >= 1:2.66.0
 Requires:	gnome-online-accounts >= 1.0
