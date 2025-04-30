@@ -2,12 +2,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	47.6
+Version:	48.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-maps/47/%{name}-%{version}.tar.xz
-# Source0-md5:	69b4e0c82bf4cd364cc02bc354b0889e
+Source0:	https://download.gnome.org/sources/gnome-maps/48/%{name}-%{version}.tar.xz
+# Source0-md5:	dabfb376880d2968f332093ff5c4e377
 URL:		https://apps.gnome.org/Maps/
 BuildRequires:	geoclue2-devel >= 0.12.99
 BuildRequires:	geocode-glib2-devel >= 3.26
@@ -17,13 +17,13 @@ BuildRequires:	glib2-devel >= 1:2.66.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	gtk4-devel >= 4.10
 BuildRequires:	json-glib-devel
-BuildRequires:	libadwaita-devel >= 1.5
+BuildRequires:	libadwaita-devel >= 1.7
 # soup3 based
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libportal-devel
 BuildRequires:	librsvg-devel >= 2.0
 # soup3 based
-BuildRequires:	libshumate-devel >= 1.2
+BuildRequires:	libshumate-devel >= 1.4
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson >= 0.61.0
 BuildRequires:	ninja >= 1.5
@@ -44,9 +44,9 @@ Requires:	glib2 >= 1:2.66.0
 Requires:	gnome-online-accounts >= 1.0
 Requires:	gtk4 >= 4.10
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.5
+Requires:	libadwaita >= 1.7
 Requires:	libgweather4 >= 4.0
-Requires:	libshumate >= 1.2
+Requires:	libshumate >= 1.4
 Requires:	libsoup3 >= 3
 Requires:	rest1 >= 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
