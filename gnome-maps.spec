@@ -21,6 +21,7 @@ BuildRequires:	libadwaita-devel >= 1.7
 # soup3 based
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libportal-devel
+BuildRequires:	librest-devel >= 0.9
 BuildRequires:	librsvg-devel >= 2.0
 # soup3 based
 BuildRequires:	libshumate-devel >= 1.4
@@ -28,7 +29,6 @@ BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson >= 0.61.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
-BuildRequires:	rest1-devel >= 0.9
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -46,9 +46,9 @@ Requires:	gtk4 >= 4.10
 Requires:	hicolor-icon-theme
 Requires:	libadwaita >= 1.7
 Requires:	libgweather4 >= 4.0
+Requires:	librest >= 0.9
 Requires:	libshumate >= 1.4
 Requires:	libsoup3 >= 3
-Requires:	rest1 >= 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
