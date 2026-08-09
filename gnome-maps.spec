@@ -2,13 +2,14 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	48.9
+Version:	50.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-maps/48/%{name}-%{version}.tar.xz
-# Source0-md5:	a1e5837481c854dad114ef7b2c0371ed
+Source0:	https://download.gnome.org/sources/gnome-maps/50/%{name}-%{version}.tar.xz
+# Source0-md5:	874118eb5c68bbf06d5984f0d78199b5
 URL:		https://apps.gnome.org/Maps/
+BuildRequires:	blueprint-compiler >= 0.19
 BuildRequires:	geoclue2-devel >= 0.12.99
 BuildRequires:	geocode-glib2-devel >= 3.26
 BuildRequires:	gettext-tools
@@ -17,14 +18,14 @@ BuildRequires:	glib2-devel >= 1:2.66.0
 BuildRequires:	gobject-introspection-devel >= 0.10.1
 BuildRequires:	gtk4-devel >= 4.10
 BuildRequires:	json-glib-devel
-BuildRequires:	libadwaita-devel >= 1.7
+BuildRequires:	libadwaita-devel >= 1.8
 # soup3 based
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libportal-devel
 BuildRequires:	librest-devel >= 0.9
 BuildRequires:	librsvg-devel >= 2.0
 # soup3 based
-BuildRequires:	libshumate-devel >= 1.4
+BuildRequires:	libshumate-devel >= 1.6
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson >= 0.61.0
 BuildRequires:	ninja >= 1.5
@@ -44,10 +45,10 @@ Requires:	glib2 >= 1:2.66.0
 Requires:	gnome-online-accounts >= 1.0
 Requires:	gtk4 >= 4.10
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.7
+Requires:	libadwaita >= 1.8
 Requires:	libgweather4 >= 4.0
 Requires:	librest >= 0.9
-Requires:	libshumate >= 1.4
+Requires:	libshumate >= 1.6
 Requires:	libsoup3 >= 3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -101,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-maps/org.gnome.Maps.*.gresource
 %{_datadir}/gnome-maps/icons
 %{_datadir}/gnome-maps/maps-service.json
-%{_datadir}/metainfo/org.gnome.Maps.appdata.xml
+%{_datadir}/metainfo/org.gnome.Maps.metainfo.xml
 %{_desktopdir}/org.gnome.Maps.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Maps.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
