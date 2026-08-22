@@ -2,12 +2,12 @@
 Summary:	Map application for GNOME
 Summary(pl.UTF-8):	Mapa dla GNOME
 Name:		gnome-maps
-Version:	50.3
+Version:	50.4
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-maps/50/%{name}-%{version}.tar.xz
-# Source0-md5:	874118eb5c68bbf06d5984f0d78199b5
+# Source0-md5:	57dc52bcfae11390d364979f7713b58e
 URL:		https://apps.gnome.org/Maps/
 BuildRequires:	blueprint-compiler >= 0.19
 BuildRequires:	geoclue2-devel >= 0.12.99
